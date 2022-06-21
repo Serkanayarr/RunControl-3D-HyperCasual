@@ -12,7 +12,7 @@ public class MainCamera : MonoBehaviour
         targetOffset = transform.position - target.position;
     }
 
-    
+
     void Update()
     {
         //target offseti koruyarak kameranýn pozisyonunu karakterden süreki offsetkadar uzak hale getirdik

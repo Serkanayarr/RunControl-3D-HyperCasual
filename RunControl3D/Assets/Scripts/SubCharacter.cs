@@ -10,7 +10,7 @@ public class SubCharacter : MonoBehaviour
     void Start()
     {// targetý destination pointe eþitledik
         _Navmesh = GetComponent<NavMeshAgent>();
-        Target = GameObject.FindWithTag("GameManager").GetComponent<GameManager>().DestinationPoint; 
+        Target = GameObject.FindWithTag("GameManager").GetComponent<GameManager>().DestinationPoint;
     }
 
     // Update is called once per frame
@@ -24,8 +24,8 @@ public class SubCharacter : MonoBehaviour
     {
         if (other.CompareTag("PinBox")) // eðer karakter iðnei kutu engeine temas ederse karakteri inaktif et
         {
-            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().InstantCharCount--;
-            gameObject.SetActive(false);    
+            GameManager.InstantCharCount--;
+            gameObject.SetActive(false);
         }
     }
 }

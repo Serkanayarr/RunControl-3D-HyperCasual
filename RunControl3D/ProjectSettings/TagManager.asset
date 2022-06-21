@@ -6,6 +6,10 @@ TagManager:
   tags:
   - GameManager
   - PinBox
+  - Addition
+  - Substraction
+  - Division
+  - Multiplication
   layers:
   - Default
   - TransparentFX

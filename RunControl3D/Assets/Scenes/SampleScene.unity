@@ -4628,8 +4628,8 @@ GameObject:
   - component: {fileID: 282787201}
   - component: {fileID: 282787200}
   m_Layer: 0
-  m_Name: +3
-  m_TagString: Untagged
+  m_Name: 3
+  m_TagString: Addition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19410,8 +19410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestinationPoint: {fileID: 743943337}
-  SpawnPoint: {fileID: 385253018}
-  InstantCharCount: 1
   Characters:
   - {fileID: 1343661230}
   - {fileID: 453489828}
@@ -27109,8 +27107,8 @@ GameObject:
   - component: {fileID: 1620688058}
   - component: {fileID: 1620688057}
   m_Layer: 0
-  m_Name: -4
-  m_TagString: Untagged
+  m_Name: 4
+  m_TagString: Substraction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27206,8 +27204,8 @@ GameObject:
   - component: {fileID: 1622152668}
   - component: {fileID: 1622152667}
   m_Layer: 0
-  m_Name: /2
-  m_TagString: Untagged
+  m_Name: 2
+  m_TagString: Division
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29206,8 +29204,8 @@ GameObject:
   - component: {fileID: 1712527380}
   - component: {fileID: 1712527381}
   m_Layer: 0
-  m_Name: X2
-  m_TagString: Untagged
+  m_Name: 2
+  m_TagString: Multiplication
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
