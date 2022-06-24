@@ -8,23 +8,22 @@ public class Character : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //karakteri ileri yönü koþturduk
-        transform.Translate(Vector3.forward * 1f * Time.deltaTime);
+        transform.Translate(Vector3.forward * 1f * Time.deltaTime);//karakteri ileri yöne koþturduk
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            // eðer mosue ekranýn solundaysa sola doðru 0.1f güçle çekilir
-            if (Input.GetAxis("Mouse X") < 0)
+
+            if (Input.GetAxis("Mouse X") < 0)// eðer mosue ekranýn solundaysa sola doðru 0.1f güçle çekilir
             {
                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 0.1f,
                     transform.position.y, transform.position.z), 0.3f);
 
             }
-            // eðer mosue ekranýn saðýndaysa saða doðru 0.1f güçle çekilir
-            if (Input.GetAxis("Mouse X") > 0)
+
+            if (Input.GetAxis("Mouse X") > 0)// eðer mosue ekranýn saðýndaysa saða doðru 0.1f güçle çekilir
             {
                 transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 0.1f,
                         transform.position.y, transform.position.z), 0.3f);
@@ -37,8 +36,7 @@ public class Character : MonoBehaviour
         if (other.CompareTag("Addition") || other.CompareTag("Substraction") || other.CompareTag("Multiplication") || other.CompareTag("Division"))
         {
             int number = int.Parse(other.name);//other.name objenin ismi yani string bir deðer olduðu için geen string deðeri integera çevirdik
-            _GameManager.CharacterManagement(other.tag, number, other.transform);// objenin tagýný ve objenin ismini yani asýnda yapýan iþlemdeki
-                                                                                 // sayýyý verdik.
+            _GameManager.CharacterManagement(other.tag, number, other.transform);/* objenin tagýný ve objenin ismini yani aslýnda yapýlan iþlemdeki sayýyý verdik.*/
         }
     }
 }

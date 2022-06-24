@@ -1,0 +1,2 @@
+C:\Serkan\Serkan\Unity Projects\RunControl-3D-HyperCasual\RunControl3D\obj\Debug\Unity.Rider.Editor.csproj.AssemblyReference.cache
+C:\Serkan\Serkan\Unity Projects\RunControl-3D-HyperCasual\RunControl3D\obj\Debug\Unity.Rider.Editor.csproj.CoreCompileInputs.cache

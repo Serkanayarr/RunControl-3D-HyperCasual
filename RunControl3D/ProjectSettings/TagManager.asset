@@ -10,6 +10,11 @@ TagManager:
   - Substraction
   - Division
   - Multiplication
+  - Saw
+  - PropellersPin
+  - SubCharacters
+  - Sledge
+  - Character
   layers:
   - Default
   - TransparentFX
