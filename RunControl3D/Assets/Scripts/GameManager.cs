@@ -256,7 +256,6 @@ public class GameManager : MonoBehaviour
             SetSound(1);
         }
     }
-
     public void SetSound(int index)
     {
         if(index == 0)
@@ -273,8 +272,4 @@ public class GameManager : MonoBehaviour
             GameFX[1].volume = SoundsSettings[1].value;
         }
     }
-
-
-
-
 }

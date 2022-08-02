@@ -293,6 +293,7 @@ namespace Seko
                 PlayerPrefs.SetFloat("MenuFX", 1);
                 PlayerPrefs.SetFloat("GameMusic", 1);
                 PlayerPrefs.SetFloat("GameFX", 1);
+                PlayerPrefs.SetString("Language", "EN");
             }
         }
     }
@@ -347,4 +348,21 @@ namespace Seko
         }
 
     }
+
+    //----------------------------------
+
+    [Serializable]
+    public class LanguageDatasMainObject
+    {
+        public int PartIndex;
+        public List<LanguageDatas> languageDatas_EN = new List<LanguageDatas>();
+        public List<LanguageDatas> languageDatas_TR = new List<LanguageDatas>();
+    }
+
+    [Serializable]
+    public class LanguageDatas
+    {
+        public string Text;
+    }
+
 }
