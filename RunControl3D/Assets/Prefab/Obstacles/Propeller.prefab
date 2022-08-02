@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6748558671205806043}
   - component: {fileID: 4115764494151324715}
   - component: {fileID: 156454488917415381}
+  - component: {fileID: 7303726640803139156}
   m_Layer: 0
   m_Name: igne.013
   m_TagString: PropellersPin
@@ -95,6 +96,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: -0.000000014901161, z: -0.000000018626451}
+--- !u!54 &7303726640803139156
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156454488917415378}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &257518439607131623
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +124,7 @@ GameObject:
   - component: {fileID: 4713715396465840854}
   - component: {fileID: 8196540052675087594}
   - component: {fileID: 257518439607131622}
+  - component: {fileID: 2557332183660922019}
   m_Layer: 0
   m_Name: igne.007
   m_TagString: PropellersPin
@@ -190,6 +208,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0, z: -0.000000018626451}
+--- !u!54 &2557332183660922019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257518439607131623}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &273162606481773221
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +236,7 @@ GameObject:
   - component: {fileID: 5419080008758855042}
   - component: {fileID: 828973442674341730}
   - component: {fileID: 273162606481773220}
+  - component: {fileID: 3714869412438081697}
   m_Layer: 0
   m_Name: igne.001
   m_TagString: PropellersPin
@@ -285,6 +320,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0.0000000037252903, z: -0.000000018626451}
+--- !u!54 &3714869412438081697
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273162606481773221}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2417623672267750522
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +473,7 @@ GameObject:
   - component: {fileID: 3507279602260962784}
   - component: {fileID: 2060384279150427577}
   - component: {fileID: 2445525095495715597}
+  - component: {fileID: 1193273566367148816}
   m_Layer: 0
   m_Name: igne.010
   m_TagString: PropellersPin
@@ -505,6 +557,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0, z: -0.000000018626451}
+--- !u!54 &1193273566367148816
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2445525095495715594}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2736386445120553565
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +585,7 @@ GameObject:
   - component: {fileID: 7668859452837494947}
   - component: {fileID: 3628495364981650600}
   - component: {fileID: 2736386445120553564}
+  - component: {fileID: 2538824777631211148}
   m_Layer: 0
   m_Name: igne.006
   m_TagString: PropellersPin
@@ -600,6 +669,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0, z: -0.000000018626451}
+--- !u!54 &2538824777631211148
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736386445120553565}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3787821200237979596
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +697,7 @@ GameObject:
   - component: {fileID: 7391767024191578713}
   - component: {fileID: 4547167904549680626}
   - component: {fileID: 3787821200237979599}
+  - component: {fileID: 6381133013893989297}
   m_Layer: 0
   m_Name: igne.014
   m_TagString: PropellersPin
@@ -695,6 +781,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: -0.000000014901161, z: -0.000000018626451}
+--- !u!54 &6381133013893989297
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3787821200237979596}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4662045250268205814
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +971,7 @@ GameObject:
   - component: {fileID: 5575376955734830946}
   - component: {fileID: 8930847641762669153}
   - component: {fileID: 5437824990001040921}
+  - component: {fileID: 7778127160232548286}
   m_Layer: 0
   m_Name: igne.002
   m_TagString: PropellersPin
@@ -952,6 +1055,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0.0000000037252903, z: -0.000000018626451}
+--- !u!54 &7778127160232548286
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5437824990001040902}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &5742684569664786613
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +1083,7 @@ GameObject:
   - component: {fileID: 4968227626032066298}
   - component: {fileID: 3851236794530999048}
   - component: {fileID: 5742684569664786612}
+  - component: {fileID: 5575656684854976323}
   m_Layer: 0
   m_Name: igne.004
   m_TagString: PropellersPin
@@ -1047,6 +1167,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0.0000000037252903, z: -0.000000018626451}
+--- !u!54 &5575656684854976323
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742684569664786613}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6072934275038681747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1195,7 @@ GameObject:
   - component: {fileID: 1482964691978419649}
   - component: {fileID: 7865323000218376493}
   - component: {fileID: 6072934275038681746}
+  - component: {fileID: 9104677985731609601}
   m_Layer: 0
   m_Name: igne.003
   m_TagString: PropellersPin
@@ -1142,6 +1279,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0.0000000037252903, z: -0.000000018626451}
+--- !u!54 &9104677985731609601
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072934275038681747}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6106149450046054220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,6 +1307,7 @@ GameObject:
   - component: {fileID: 6178161288163092175}
   - component: {fileID: 5419413406278126629}
   - component: {fileID: 6106149450046054223}
+  - component: {fileID: 1595850016086453739}
   m_Layer: 0
   m_Name: igne.005
   m_TagString: PropellersPin
@@ -1237,6 +1391,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0.0000000037252903, z: -0.000000018626451}
+--- !u!54 &1595850016086453739
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106149450046054220}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6663829200307261068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1419,7 @@ GameObject:
   - component: {fileID: 7782462772010474647}
   - component: {fileID: 3362041556878104511}
   - component: {fileID: 6663829200307261071}
+  - component: {fileID: 3232382290359864885}
   m_Layer: 0
   m_Name: igne.009
   m_TagString: PropellersPin
@@ -1332,6 +1503,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0, z: -0.000000018626451}
+--- !u!54 &3232382290359864885
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663829200307261068}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6777576560078734429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1531,7 @@ GameObject:
   - component: {fileID: 659778996853609843}
   - component: {fileID: 391691462705351128}
   - component: {fileID: 6777576560078734428}
+  - component: {fileID: 6347575007028882158}
   m_Layer: 0
   m_Name: igne.015
   m_TagString: PropellersPin
@@ -1427,6 +1615,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: -0.000000014901161, z: -0.000000018626451}
+--- !u!54 &6347575007028882158
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777576560078734429}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6912106574145937693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1739,7 @@ GameObject:
   - component: {fileID: 1484172872593220150}
   - component: {fileID: 4267724994703874951}
   - component: {fileID: 7968909472541645799}
+  - component: {fileID: 2715889081307296766}
   m_Layer: 0
   m_Name: igne.008
   m_TagString: PropellersPin
@@ -1618,6 +1823,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: 0, z: -0.000000018626451}
+--- !u!54 &2715889081307296766
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968909472541645796}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7978069798097780628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1968,7 @@ GameObject:
   - component: {fileID: 5759212472043009411}
   - component: {fileID: 5001071770359679860}
   - component: {fileID: 8049359391109921583}
+  - component: {fileID: 8274034825614489311}
   m_Layer: 0
   m_Name: igne.011
   m_TagString: PropellersPin
@@ -1830,6 +2052,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: -0.000000014901161, z: -0.000000018626451}
+--- !u!54 &8274034825614489311
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049359391109921580}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &8385154073230389013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +2080,7 @@ GameObject:
   - component: {fileID: 5013394829525233190}
   - component: {fileID: 1038568938983346411}
   - component: {fileID: 8385154073230389012}
+  - component: {fileID: 7335409857351192100}
   m_Layer: 0
   m_Name: igne.012
   m_TagString: PropellersPin
@@ -1925,6 +2164,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.020000005, y: 0.020000001, z: 0.020000001}
   m_Center: {x: 0, y: -0.000000014901161, z: -0.000000018626451}
+--- !u!54 &7335409857351192100
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385154073230389013}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &9007791721713648987
 GameObject:
   m_ObjectHideFlags: 0

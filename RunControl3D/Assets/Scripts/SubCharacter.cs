@@ -65,5 +65,9 @@ public class SubCharacter : MonoBehaviour
             _GameManager.CreateExtinctionEffect(MainPosition(), false);
             gameObject.SetActive(false);
         }
+        else if (other.CompareTag("EmptyCharacter"))
+        {
+            _GameManager.Characters.Add(other.gameObject);// eðer serseri karakterle çarpýþýrsa serseri karakteri akarkterler listesine ekliyoruz.
+        }
     }
 }

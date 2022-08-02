@@ -17,6 +17,9 @@ TagManager:
   - Character
   - Enemy
   - FinalTrigger
+  - MidPole
+  - EmptyCharacter
+  - MenuMusic
   layers:
   - Default
   - TransparentFX

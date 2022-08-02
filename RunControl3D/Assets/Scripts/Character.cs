@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Character : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class Character : MonoBehaviour
     public MainCamera _Camera;// cameranýn get componentýný almak yerine referans yöntemini kullandýk.
     public GameObject finalPosition;
     public bool finalBattle;
+    public Slider _Slider;
+    public GameObject wayPoint;
 
     private void FixedUpdate()
     {
@@ -18,31 +22,47 @@ public class Character : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+        float Dist = Vector3.Distance(transform.position, wayPoint.transform.position);
+        _Slider.maxValue = Dist;
+    }
+
     void Update()
     {
-        if (finalBattle) 
+        if (Time.timeScale != 0)
         {
-            transform.position = Vector3.Lerp(transform.position, finalPosition.transform.position, 0.005f);
-        }
-        else 
-        {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (finalBattle)
             {
-
-                if (Input.GetAxis("Mouse X") < 0)// eðer mosue ekranýn solundaysa sola doðru 0.1f güçle çekilir
+                transform.position = Vector3.Lerp(transform.position, finalPosition.transform.position, 0.005f);
+                if (_Slider.value != 0)
                 {
-                    transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 0.1f,
-                        transform.position.y, transform.position.z), 0.3f);
-
-                }
-
-                if (Input.GetAxis("Mouse X") > 0)// eðer mosue ekranýn saðýndaysa saða doðru 0.1f güçle çekilir
-                {
-                    transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 0.1f,
-                            transform.position.y, transform.position.z), 0.3f);
+                    _Slider.value -= 0.005f;
                 }
             }
-        }  
+            else
+            {
+
+                float Dist = Vector3.Distance(transform.position, wayPoint.transform.position);
+                _Slider.value = Dist;
+
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    if (Input.GetAxis("Mouse X") < 0)// eðer mosue ekranýn solundaysa sola doðru 0.1f güçle çekilir
+                    {
+                        transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 0.1f,
+                            transform.position.y, transform.position.z), 0.3f);
+
+                    }
+
+                    if (Input.GetAxis("Mouse X") > 0)// eðer mosue ekranýn saðýndaysa saða doðru 0.1f güçle çekilir
+                    {
+                        transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 0.1f,
+                                transform.position.y, transform.position.z), 0.3f);
+                    }
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,5 +78,25 @@ public class Character : MonoBehaviour
             _GameManager.triggerEnemies();
             finalBattle = true;
         }
+        else if (other.CompareTag("EmptyCharacter"))
+        {
+            _GameManager.Characters.Add(other.gameObject);// eðer serseri karakterle çarpýþýrsa serseri karakteri akarkterler listesine ekliyoruz.
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MidPole") || collision.gameObject.CompareTag("PinBox") || collision.gameObject.CompareTag("PropellersPin")) 
+        {
+            if(transform.position.x > 0) 
+            {
+                transform.position = new Vector3(transform.position.x - .2f, transform.position.y, transform.position.z);
+            }
+            else 
+            {
+                transform.position = new Vector3(transform.position.x + .2f, transform.position.y, transform.position.z);
+            }
+                
+        }    
     }
 }
