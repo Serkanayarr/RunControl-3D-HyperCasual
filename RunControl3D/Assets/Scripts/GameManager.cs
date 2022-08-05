@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Seko;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -32,10 +33,15 @@ public class GameManager : MonoBehaviour
     public Material DefaultTheme;
     public GameObject[] Panels;
     public Slider[] SoundsSettings;
-    
+
+    public List<LanguageDatasMainObject> _LanguageDatasMainObject = new List<LanguageDatasMainObject>();
+    List<LanguageDatasMainObject> _LanguageReadDatas = new List<LanguageDatasMainObject>();
+    public TextMeshProUGUI[] TextObjects;
+
 
     MathematicalOperations _MathematicalOperations = new MathematicalOperations();
     MemoryManagement _MemoryManagement = new MemoryManagement();
+    DataManagement _DataManagement = new DataManagement();
 
     Scene _Scene;
     public AudioSource GameMusic;
@@ -53,7 +59,30 @@ public class GameManager : MonoBehaviour
         GameFX[1].volume = _MemoryManagement.ReadData_float("GameFX");
         Destroy(GameObject.FindWithTag("MenuMusic"));
         ControlTheItems();
+
+        _DataManagement.LanguageLoad();
+        _LanguageReadDatas = _DataManagement.TransferLanguageList();
+        _LanguageDatasMainObject.Add(_LanguageReadDatas[5]);
+        LanguagePreferManagement();
     }
+    public void LanguagePreferManagement()
+    {
+        if (_MemoryManagement.ReadData_string("Language") == "TR")
+        {
+            for (int i = 0; i < TextObjects.Length; i++)
+            {
+                TextObjects[i].text = _LanguageDatasMainObject[0].languageDatas_TR[i].Text;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < TextObjects.Length; i++)
+            {
+                TextObjects[i].text = _LanguageDatasMainObject[0].languageDatas_EN[i].Text;
+            }
+        }
+    }
+
     void Start()
     {
         CreateEnemy();

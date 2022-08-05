@@ -2462,7 +2462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExitPanel: {fileID: 57191774}
-  _ItemDatas:
+  _DefaultItemDatas:
   - GroupIndex: 1
     ItemIndex: 0
     ItemName: CAP 1
@@ -2523,8 +2523,7 @@ MonoBehaviour:
     ItemName: THEME 5
     Point: 1500
     BuyingSituation: 0
-  ButtonsSound: {fileID: 1332851115}
-  _LanguageDatasMainObject:
+  _DefaultLanguageDatas:
   - PartIndex: 0
     languageDatas_EN:
     - Text: PLAY
@@ -2546,6 +2545,63 @@ MonoBehaviour:
     - Text: "EM\u0130N M\u0130S\u0130N\u0130Z?"
     - Text: EVET
     - Text: HAYIR
+  - PartIndex: 1
+    languageDatas_EN:
+    - Text: CAP
+    - Text: STICK
+    - Text: THEME
+    - Text: NO ITEM
+    - Text: BUY
+    - Text: SAVE
+    languageDatas_TR:
+    - Text: SAPKA
+    - Text: SOPA
+    - Text: TEMA
+    - Text: ITEM YOK
+    - Text: SATIN AL
+    - Text: KAYDET
+  - PartIndex: 2
+    languageDatas_EN:
+    - Text: SELECT LEVEL
+    languageDatas_TR:
+    - Text: "LEVEL SE\xC7"
+  - PartIndex: 3
+    languageDatas_EN:
+    - Text: "SHOPP\u0130NG"
+    languageDatas_TR:
+    - Text: ALISVERIS
+  - PartIndex: 4
+    languageDatas_EN:
+    - Text: "SETT\u0130NGS"
+    - Text: MENU SOUND
+    - Text: MENU FX
+    - Text: GAME SOUND
+    - Text: GAME FX
+    - Text: LANGUAGE
+    languageDatas_TR:
+    - Text: AYARLAR
+    - Text: "MEN\xDC SES\u0130"
+    - Text: "MEN\xDC FX"
+    - Text: "OYUN SES\u0130"
+    - Text: OYUN FX
+    - Text: "D\u0130L"
+  - PartIndex: 5
+    languageDatas_EN:
+    - Text: SETTINGS
+    - Text: GAME SOUND
+    - Text: GAME FX
+    - Text: GAME PAUSED
+    - Text: YOU WIN
+    - Text: YOU LOSE
+    languageDatas_TR:
+    - Text: AYARLAR
+    - Text: "OYUN SES\u0130"
+    - Text: OYUN FX
+    - Text: OYUN DURAKLATIRDI
+    - Text: KAZANDIN
+    - Text: "KAYBETT\u0130N"
+  ButtonsSound: {fileID: 1332851115}
+  _LanguageDatasMainObject: []
   TextObjects:
   - {fileID: 1680438734}
   - {fileID: 293097685}

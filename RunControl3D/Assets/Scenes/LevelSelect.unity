@@ -3208,6 +3208,8 @@ MonoBehaviour:
   Level: 8
   LockButton: {fileID: 21300000, guid: 9f22c675f405cc64fa5ad95018dada13, type: 3}
   ButtonsSound: {fileID: 1015506997}
+  _LanguageDatasMainObject: []
+  TextObject: {fileID: 780888432}
 --- !u!4 &1015506996
 Transform:
   m_ObjectHideFlags: 0

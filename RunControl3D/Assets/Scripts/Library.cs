@@ -335,7 +335,7 @@ namespace Seko
             return _ItemInsideList;
         }
 
-        public void FirstInstallFileCreation(List<ItemDatas> _ItemDatas)
+        public void FirstInstallFileCreation(List<ItemDatas> _ItemDatas, List<LanguageDatasMainObject> _LanguageDatas)
         {
             if (!File.Exists(Application.persistentDataPath + "/ItemDatas.gd"))
             {
@@ -345,7 +345,36 @@ namespace Seko
                 bf.Serialize(file, _ItemDatas);//ýtem datas listesi içindeki infolarý file dosyasýna yazdýrýyoruz(?).
                 file.Close();// en son iþimiz bittiðinde close diyerek dosyayý kapatýyoruz
             }
+
+            if (!File.Exists(Application.persistentDataPath + "/LanguageDatas.gd"))
+            {
+                _ItemDatas[1].BuyingSituation = true;
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Create(Application.persistentDataPath + "/LanguageDatas.gd"); //ilk önce fileýnýn yaratýlýcaðýu pathi sonra da hangi isimle yaratýlýcaðýný girdik. PS:.gd dosya uzantýsý ismi.
+                bf.Serialize(file, _LanguageDatas);//ýtem datas listesi içindeki infolarý file dosyasýna yazdýrýyoruz(?).
+                file.Close();// en son iþimiz bittiðinde close diyerek dosyayý kapatýyoruz
+            }
         }
+
+        //-------------------------------------------------
+
+        List<LanguageDatasMainObject> _LanguageDatasInsideList;
+        public void LanguageLoad()
+        {
+            if (File.Exists(Application.persistentDataPath + "/LanguageDatas.gd")) // Dosyanýn silinmesi veya baþka yere taþýnmasý halinde problem olmamasý için önce dosyayý check ediyoruz
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(Application.persistentDataPath + "/LanguageDatas.gd", FileMode.Open);// Dosyamýzý açýyoruz
+                _LanguageDatasInsideList = (List<LanguageDatasMainObject>)bf.Deserialize(file);// baþýna (List<ItemDatas>) koyduk çünkü çözüðüceðin verilerin türü itemdatas sýnýfýnda benim vermiþ olduðum verilerdir dedim
+                file.Close();
+            }
+        }
+
+        public List<LanguageDatasMainObject> TransferLanguageList()
+        {
+            return _LanguageDatasInsideList;
+        }
+
 
     }
 

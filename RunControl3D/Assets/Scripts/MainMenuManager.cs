@@ -11,19 +11,25 @@ public class MainMenuManager : MonoBehaviour
     MemoryManagement _MemoryManagement = new MemoryManagement();
     DataManagement _DataManagement = new DataManagement();
     public GameObject ExitPanel;
-    public List<ItemDatas> _ItemDatas = new List<ItemDatas>();
+    public List<ItemDatas> _DefaultItemDatas = new List<ItemDatas>();
+    public List<LanguageDatasMainObject> _DefaultLanguageDatas = new List<LanguageDatasMainObject>();
     public AudioSource ButtonsSound;
 
     public List<LanguageDatasMainObject> _LanguageDatasMainObject = new List<LanguageDatasMainObject>();
+    List<LanguageDatasMainObject> _LanguageReadDatas = new List<LanguageDatasMainObject>();
     public TextMeshProUGUI[] TextObjects;
 
     void Start()
     {
         _MemoryManagement.ControlAndDefine();
-        _DataManagement.FirstInstallFileCreation(_ItemDatas);//diðer tüm itemler bitince aktifleþtir
+        _DataManagement.FirstInstallFileCreation(_DefaultItemDatas , _DefaultLanguageDatas);//diðer tüm itemler bitince aktifleþtir
         ButtonsSound.volume = _MemoryManagement.ReadData_float("MenuFX");
         //Debug.Log(_LanguageDatasMainObject[0].languageDatas_TR[4].Text);
-        _MemoryManagement.SaveData_string("Language", "TR");
+        //_MemoryManagement.SaveData_string("Language", "TR");
+
+        _DataManagement.LanguageLoad();
+        _LanguageReadDatas = _DataManagement.TransferLanguageList();
+        _LanguageDatasMainObject.Add(_LanguageReadDatas[0]);
         LanguagePreferManagement();
     }
 

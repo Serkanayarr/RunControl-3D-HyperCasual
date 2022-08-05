@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 using Seko;
 
@@ -11,10 +12,23 @@ public class LevelManager : MonoBehaviour
     public int Level;
     public Sprite LockButton;
     public AudioSource ButtonsSound;
+    
 
     MemoryManagement _MemoryManagement = new MemoryManagement();
+    DataManagement _DataManagement = new DataManagement();
+
+    public List<LanguageDatasMainObject> _LanguageDatasMainObject = new List<LanguageDatasMainObject>();
+    List<LanguageDatasMainObject> _LanguageReadDatas = new List<LanguageDatasMainObject>();
+    public TextMeshProUGUI TextObject;
+
     void Start()
     {
+        //_MemoryManagement.SaveData_string("Language", "TR");
+        _DataManagement.LanguageLoad();
+        _LanguageReadDatas = _DataManagement.TransferLanguageList();
+        _LanguageDatasMainObject.Add(_LanguageReadDatas[2]);
+        LanguagePreferManagement();
+
         ButtonsSound.volume = _MemoryManagement.ReadData_float("MenuFX");
         int currentLevel = _MemoryManagement.ReadData_int("LastLevel") - 4;/*Oyuncunun kaçýncý levelde kaldýðýný anlamak için last leveli
         currentLevel parametresine eþitliyoruz böylece en son hangi levelda olunduðunun bilgisine sahip oluyoruz ancak bizim ilk levelýmýz
@@ -38,13 +52,23 @@ public class LevelManager : MonoBehaviour
             Index++;
         }
     }
-    
+
+    public void LanguagePreferManagement()
+    {
+        if (_MemoryManagement.ReadData_string("Language") == "TR")
+        {
+            TextObject.text = _LanguageDatasMainObject[0].languageDatas_TR[0].Text;
+        }
+        else
+        {
+            TextObject.text = _LanguageDatasMainObject[0].languageDatas_EN[0].Text;
+        }
+    }
     public void LoadScene(int Index) 
     {
         ButtonsSound.Play();
         SceneManager.LoadScene(Index);
     }
-    
     public void ComeBack() 
     {
         ButtonsSound.Play();
