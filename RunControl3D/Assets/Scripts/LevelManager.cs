@@ -12,14 +12,16 @@ public class LevelManager : MonoBehaviour
     public int Level;
     public Sprite LockButton;
     public AudioSource ButtonsSound;
-    
+
+    public GameObject LoadingScene;
+    public Slider LoadingSlider;
 
     MemoryManagement _MemoryManagement = new MemoryManagement();
     DataManagement _DataManagement = new DataManagement();
 
     public List<LanguageDatasMainObject> _LanguageDatasMainObject = new List<LanguageDatasMainObject>();
     List<LanguageDatasMainObject> _LanguageReadDatas = new List<LanguageDatasMainObject>();
-    public TextMeshProUGUI TextObject;
+    public TextMeshProUGUI[] TextObjects;
 
     void Start()
     {
@@ -52,22 +54,39 @@ public class LevelManager : MonoBehaviour
             Index++;
         }
     }
-
     public void LanguagePreferManagement()
     {
         if (_MemoryManagement.ReadData_string("Language") == "TR")
         {
-            TextObject.text = _LanguageDatasMainObject[0].languageDatas_TR[0].Text;
+            for (int i = 0; i < TextObjects.Length; i++)
+            {
+                TextObjects[i].text = _LanguageDatasMainObject[0].languageDatas_TR[i].Text;
+            }
         }
         else
         {
-            TextObject.text = _LanguageDatasMainObject[0].languageDatas_EN[0].Text;
+            for (int i = 0; i < TextObjects.Length; i++)
+            {
+                TextObjects[i].text = _LanguageDatasMainObject[0].languageDatas_EN[i].Text;
+            }
         }
     }
     public void LoadScene(int Index) 
     {
         ButtonsSound.Play();
-        SceneManager.LoadScene(Index);
+        StartCoroutine(LoadAsync(Index));
+    }
+    IEnumerator LoadAsync(int SceneLoadIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneLoadIndex);//bana verdiðim indexteki sahnenin yükleme oranýný vericek
+        LoadingScene.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);//clamp01 verilen float deðerlerini 0 ve 1 arasýnda tutar eksiyse 0a 1den bðyðkse 1e yuvarlar. bu þekilde deðeri
+            // daha da küçülttüðümüz için sliderý sonuna kadar süzmüþ oluyoruz.
+            LoadingSlider.value = progress;//sliderýn deðerini sürekli güncelliyoruz
+            yield return null;
+        }
     }
     public void ComeBack() 
     {

@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     public AudioSource GameMusic;
     public AudioSource[] GameFX;
 
+    public GameObject LoadingScene;
+    public Slider LoadingSlider;
+
     [SerializeField]
     public static int InstantCharCount = 1;
 
@@ -82,7 +85,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     void Start()
     {
         CreateEnemy();
@@ -124,6 +126,7 @@ public class GameManager : MonoBehaviour
                 }
                 _MainCharacter.GetComponent<Animator>().SetBool("Attack", false);
                 Debug.Log("you loose");
+                Panels[3].SetActive(true);
 
 
             }
@@ -143,6 +146,7 @@ public class GameManager : MonoBehaviour
                     _MemoryManagement.SaveData_int("LastLevel", _MemoryManagement.ReadData_int("LastLevel") + 1);
 
                 Debug.Log("you win");
+                Panels[2].SetActive(true);
             }
 
         }
@@ -268,7 +272,13 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(_Scene.buildIndex);
                 Time.timeScale = 1;
                 break;
-            
+            case "MainMenu":
+                SceneManager.LoadScene(0);
+                break;
+            case "NextLevel":
+                StartCoroutine(LoadAsync(_Scene.buildIndex + 1));
+                break;
+
         }
             
     }
@@ -299,6 +309,18 @@ public class GameManager : MonoBehaviour
 
             GameFX[0].volume = SoundsSettings[1].value;
             GameFX[1].volume = SoundsSettings[1].value;
+        }
+    }
+    IEnumerator LoadAsync(int SceneLoadIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneLoadIndex);//bana verdiðim indexteki sahnenin yükleme oranýný vericek
+        LoadingScene.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);//clamp01 verilen float deðerlerini 0 ve 1 arasýnda tutar eksiyse 0a 1den bðyðkse 1e yuvarlar. bu þekilde deðeri
+            // daha da küçülttüðümüz için sliderý sonuna kadar süzmüþ oluyoruz.
+            LoadingSlider.value = progress;//sliderýn deðerini sürekli güncelliyoruz
+            yield return null;
         }
     }
 }
