@@ -191,7 +191,7 @@ public class CustomizeManager : MonoBehaviour
                 {
                     MaterialIndex = _MemoryManagement.ReadData_int("ActiveTheme");
                     Material[] mats = _Renderer.materials;
-                    mats[0] = Materials[MaterialIndex];
+                    mats[0] = Materials[0];
                     _Renderer.materials = mats;
                     TextObjects[4].text = SatinAlmaText;
                 }
@@ -506,7 +506,7 @@ public class CustomizeManager : MonoBehaviour
         {
             if (MaterialIndex == -1) // eðer ileriye bastýðýmda þapka indexi -1 ise 
             {
-                //MaterialIndex = 0;
+                MaterialIndex = 0;
                 Material[] mats = _Renderer.materials;
                 mats[0] = Materials[MaterialIndex];
                 _Renderer.materials = mats;
