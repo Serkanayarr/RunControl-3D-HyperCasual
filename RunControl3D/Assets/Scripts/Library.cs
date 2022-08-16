@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using GoogleMobileAds.Api;
 
 namespace Seko
 {
@@ -294,6 +295,8 @@ namespace Seko
                 PlayerPrefs.SetFloat("GameMusic", 1);
                 PlayerPrefs.SetFloat("GameFX", 1);
                 PlayerPrefs.SetString("Language", "EN");
+                PlayerPrefs.SetInt("InterstitialAdNumber", 1);
+
             }
         }
     }
@@ -378,7 +381,7 @@ namespace Seko
 
     }
 
-    //----------------------------------
+    //Language Management ---------------------
 
     [Serializable]
     public class LanguageDatasMainObject
@@ -394,4 +397,103 @@ namespace Seko
         public string Text;
     }
 
+    //Add Management ---------------------
+
+    public class AdManagement 
+    {
+        private InterstitialAd Interstitial;// geçiþ reklamýmýz olucak
+        private RewardedAd _RewardedAd;
+
+        // GEÇÝÞ REKLAMI
+        public void RequestInterstitial()
+        {
+            string AdUnitId;
+        #if UNITY_ANDROID
+            AdUnitId = "ca-app-pub-3940256999942544/1033173712";
+        #elif UNITY_IPHONE
+                    AdUnitId = "ca-app-pub-3940256099942544/4411468910";
+        #else
+                    AdUnitId = "unexpected_platform";
+        #endif
+
+            Interstitial = new InterstitialAd(AdUnitId);
+            AdRequest request = new AdRequest.Builder().Build();
+            Interstitial.LoadAd(request);
+
+            Interstitial.OnAdClosed += InterstitialAdClosed;//reklam kapatýldýðýnda InterstitialAdClosed fonksiyonunu çaðýr demek bu satýr
+        }
+        void InterstitialAdClosed(object sender, EventArgs args) 
+        {
+                Interstitial.Destroy();// her kapatýýðýnda reklamý kapatýp yeni bir reklam ekliyoruz
+                RequestInterstitial();
+        }
+        public void ShowInterstitialAd()
+        {
+            if (PlayerPrefs.GetInt("InterstitialAdNumber") == 2)
+            {
+                if (Interstitial.IsLoaded())
+                {
+                    PlayerPrefs.SetInt("InterstitialAdNumber", 1);
+                    Interstitial.Show();
+                }
+                else
+                {
+                    Interstitial.Destroy();// her kapatýýðýnda reklamý kapatýp yeni bir reklam ekliyoruz
+                    RequestInterstitial();
+                }
+            }
+            else 
+            {
+                PlayerPrefs.SetInt("InterstitialAdNumber", PlayerPrefs.GetInt("InterstitialAdNumber") + 1);
+            }
+           
+        }
+
+        //ÖDÜLLÜ REKLAM
+        public void RequestRewardedAd()
+        {
+            string AdUnitId;
+#if UNITY_ANDROID
+            AdUnitId = "ca-app-pub-3940256999942544/5224354917";
+#elif UNITY_IPHONE
+                    AdUnitId = "ca-app-pub-3940256099942544/1712485313";
+#else
+                    AdUnitId = "unexpected_platform";
+#endif
+
+            _RewardedAd = new RewardedAd(AdUnitId);
+            AdRequest request = new AdRequest.Builder().Build();
+            _RewardedAd.LoadAd(request);
+
+            _RewardedAd.OnUserEarnedReward += RewardedAdCompleted;
+            _RewardedAd.OnAdClosed += RewardedAdClosed;//reklam kapatýldýðýnda InterstitialAdClosed fonksiyonunu çaðýr demek bu satýr
+            _RewardedAd.OnAdLoaded += RewardedAdLoaded;
+        }
+
+
+        private void RewardedAdCompleted(object sender, Reward e)
+        {
+            string type = e.Type;
+            double amount = e.Amount;
+
+            Debug.Log("Ödül Alýnsýns: " + type + "--" + amount);
+        }
+        private void RewardedAdClosed(object sender, EventArgs e)
+        {
+            Debug.Log("Reklam Kapatýldý");
+            RequestRewardedAd();
+        }
+        private void RewardedAdLoaded(object sender, EventArgs e)
+        {
+            Debug.Log("Reklam Yüklendi");
+        }
+
+        public void ShowRewardedAd()
+        {
+            if (_RewardedAd.IsLoaded())
+                _RewardedAd.Show();
+        }
+
+
+    }
 }

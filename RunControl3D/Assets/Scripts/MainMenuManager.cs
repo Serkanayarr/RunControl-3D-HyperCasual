@@ -10,6 +10,7 @@ public class MainMenuManager : MonoBehaviour
 {
     MemoryManagement _MemoryManagement = new MemoryManagement();
     DataManagement _DataManagement = new DataManagement();
+    AdManagement _AdManagement = new AdManagement();
     public GameObject ExitPanel;
     public List<ItemDatas> _DefaultItemDatas = new List<ItemDatas>();
     public List<LanguageDatasMainObject> _DefaultLanguageDatas = new List<LanguageDatasMainObject>();
@@ -33,6 +34,7 @@ public class MainMenuManager : MonoBehaviour
         _LanguageReadDatas = _DataManagement.TransferLanguageList();
         _LanguageDatasMainObject.Add(_LanguageReadDatas[0]);
         LanguagePreferManagement();
+
     }
     public void LanguagePreferManagement()
     {

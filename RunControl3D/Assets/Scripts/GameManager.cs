@@ -6,6 +6,7 @@ using Seko;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
 
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     MathematicalOperations _MathematicalOperations = new MathematicalOperations();
     MemoryManagement _MemoryManagement = new MemoryManagement();
     DataManagement _DataManagement = new DataManagement();
+    AdManagement _AdManagement = new AdManagement();
 
     Scene _Scene;
     public AudioSource GameMusic;
@@ -89,6 +91,9 @@ public class GameManager : MonoBehaviour
     {
         CreateEnemy();
         _Scene = SceneManager.GetActiveScene();
+
+        _AdManagement.RequestInterstitial();
+        _AdManagement.RequestRewardedAd();
     }
     public void CreateEnemy() 
     {
@@ -116,6 +121,7 @@ public class GameManager : MonoBehaviour
 
             if (InstantCharCount == 1)
             {
+                _AdManagement.ShowInterstitialAd();
                 GameOver = true;
                 foreach (var enemy in Enemies)
                 {
@@ -132,6 +138,7 @@ public class GameManager : MonoBehaviour
             }
             else if (EnemiesNumber == 0)
             {
+                _AdManagement.ShowInterstitialAd();
                 GameOver = true;
                 foreach (var character in Characters)
                 {
@@ -148,7 +155,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("you win");
                 Panels[2].SetActive(true);
             }
-
+            
         }
     }
     void Update()
@@ -322,5 +329,9 @@ public class GameManager : MonoBehaviour
             LoadingSlider.value = progress;//sliderýn deðerini sürekli güncelliyoruz
             yield return null;
         }
+    }
+    public void RewardedAd()
+    {
+        _AdManagement.ShowRewardedAd();
     }
 }
